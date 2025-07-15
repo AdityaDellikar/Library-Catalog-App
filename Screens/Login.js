@@ -1,4 +1,5 @@
-import React, { Component, useState } from 'react';
+import * as Animatable from 'react-native-animatable';
+import React, { Component, useState, useRef } from 'react';
 import { Button, Text, TextInput, View, StyleSheet, SafeAreaView, KeyboardAvoidingView, Platform, TouchableOpacity, Image } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -11,14 +12,18 @@ const Login = () => {
     const [email, setEmail ] = useState();
     const [ password, setPassword] = useState();
     const navigation = useNavigation();
+    const formRef = useRef(null);
+    const logoRef = useRef(null);
 
   return (
    <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView style={styles.avoidingView}
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-        <View style={styles.icon} >
+        <Animatable.View ref={logoRef} animation="bounceInDown" duration={1000} style={styles.icon} >
             <Image source={require("../assets/LibriScan.png")} style={styles.logo} />
-        </View>
+        </Animatable.View>
+
+        <Animatable.View ref={formRef} animation="bounceInUp" duration={1000} >
         <TextInput style={styles.input} 
         placeholder='Enter your email' 
         onChangeText={(email)=>setEmail(email)}
@@ -31,6 +36,8 @@ const Login = () => {
         <TouchableOpacity style={styles.button}
         onPress={async() => {
             console.log({email,password});
+            await logoRef.current?.animate("bounceOutUp", 600);
+            await formRef.current?.animate("bounceOutDown", 600);
             await AsyncStorage.setItem("token", "abcd");
             await AsyncStorage.setItem("userEmail", email);
             setIsUserLoggedIn(true);
@@ -38,6 +45,7 @@ const Login = () => {
         >
             <Text style={styles.btnText} >Login User</Text>
         </TouchableOpacity>
+        </Animatable.View>
         <Text style={styles.linkText} onPress={()=>{
             navigation.navigate("Register");
         }}>

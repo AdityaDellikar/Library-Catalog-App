@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useRoute } from '@react-navigation/native';
+import * as Animatable from 'react-native-animatable';
+
 
 const Profile = ({navigation}) => {
     const[ userData, setUserData ] = useState({name: '', email: ''});
@@ -23,10 +25,11 @@ const Profile = ({navigation}) => {
             setIsUserLoggedIn(false);
         }
     };
+    const aniRef = useRef();
 
 
   return (
-    <View style={styles.container} >
+    <Animatable.View ref={aniRef} animation="fadeInRight" duration={900} style={styles.container} >
         <Image 
         source={{uri: 'https://via.placeholder.com/120/FFFFFF/000000?text=User'}}
         style={styles.avatar}
@@ -39,7 +42,7 @@ const Profile = ({navigation}) => {
             <Text style={styles.logoutTxt} >Log Out</Text>
 
         </TouchableOpacity>
-    </View>
+    </Animatable.View>
   );
 };
 

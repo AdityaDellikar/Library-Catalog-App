@@ -1,15 +1,18 @@
-import React, { Component, use, useEffect, useState } from 'react'
+import React, { Component, use, useEffect, useState, useRef } from 'react'
 import { Text, View, Image, StyleSheet, ScrollView, TouchableOpacity, KeyboardAvoidingView,Platform } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 import { getStoredStatus, saveStatus, getBookcomments, saveBookComments } from '../utils/Storage'
 import { TextInput } from 'react-native-gesture-handler'
 import RatingStars from '../components/RatingStars'
+import * as Animatable from 'react-native-animatable';
+
 
 const BookDetails = ({route}) => {
     const {book} = route.params;
     const [status, setStatus] = useState({});
     const [ comments, setComments ] = useState([]);
     const [ newComment, setNewComment ] = useState('');
+    const animateRef = useRef();
 
     useEffect(() => {
         const loadStatus = async () => {
@@ -51,8 +54,10 @@ const BookDetails = ({route}) => {
   };
 
     return (
+      
         <KeyboardAvoidingView style={styles.avoidingView}
               behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+              <Animatable.View ref={animateRef} animation="fadeInRight" duration={800} >
         <ScrollView contentContainerStyle={styles.container} >
             <Image source={{uri:book.cover}} style={styles.cover} />
 
@@ -110,6 +115,7 @@ const BookDetails = ({route}) => {
           )}
 
         </ScrollView>
+        </Animatable.View>
       </KeyboardAvoidingView>
     );
 };
