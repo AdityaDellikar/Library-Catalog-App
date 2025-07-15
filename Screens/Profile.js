@@ -5,6 +5,7 @@ import { useRoute } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 
 
+
 const Profile = ({navigation}) => {
     const[ userData, setUserData ] = useState({name: '', email: ''});
     const route = useRoute();

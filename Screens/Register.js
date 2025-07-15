@@ -3,6 +3,7 @@ import React,{ Component, useState, useRef } from 'react';
 import { TouchableOpacity, Text, TextInput, View, KeyboardAvoidingView, StyleSheet,Platform, SafeAreaView, Image } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { LinearGradient } from 'expo-linear-gradient';
 
 
 const Register = () => {
@@ -18,11 +19,12 @@ const Register = () => {
 
 
   return (
+    <LinearGradient colors={["#ebedff", "#f3f2f8", "#dbf8ff"]} style={styles.gradient} >
      <SafeAreaView style={styles.container}>
         <KeyboardAvoidingView style={styles.avoidingView}
               behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <Animatable.View ref={logoRef} animation="bounceInDown" duration={1000} style={styles.icon} >
-            <Image source={require("../assets/LibriScan.png")} style={styles.logo} />
+            <Image source={require("../assets/LibriScan-removebg-preview.png")} style={styles.logo} />
         </Animatable.View>
 
 
@@ -62,6 +64,7 @@ const Register = () => {
         </Text>
         </KeyboardAvoidingView>
       </SafeAreaView>
+      </LinearGradient>
 
   )
 }
@@ -73,7 +76,6 @@ const styles = StyleSheet.create({
       flex: 1,
       padding: 20,
       justifyContent: 'center',
-      backgroundColor: '#fff', 
     },
     // header: {
     //   fontSize: 32,
@@ -124,6 +126,9 @@ const styles = StyleSheet.create({
         height:250,
         resizeMode:"contain",
     },
+    gradient:{
+        flex:1,
+    }
 
 
 })

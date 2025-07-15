@@ -5,6 +5,7 @@ import {Ionicons} from "@expo/vector-icons";
 import { useNavigation } from '@react-navigation/native';
 
 
+
 const BookAtem = ({book, status, onToggleFavourite, onToggleRead}) => {
     const navigation = useNavigation();
     const animRef = useRef();
@@ -12,6 +13,7 @@ const BookAtem = ({book, status, onToggleFavourite, onToggleRead}) => {
       navigation.navigate("Book Details", {book, status});
     };
     return (
+   
       <Animatable.View ref={animRef} animation="fadeInRight" duration={500} >
         <TouchableOpacity style={styles.card} onPress={handlePress} >
         <Image source={{ uri: book.cover }} style={styles.cover} />
@@ -41,6 +43,8 @@ const BookAtem = ({book, status, onToggleFavourite, onToggleRead}) => {
         </View>
       </TouchableOpacity>
       </Animatable.View>
+
+
     );
   };
 
@@ -94,4 +98,5 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         marginTop: 10,
       },
+
 });
