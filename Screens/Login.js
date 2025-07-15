@@ -1,8 +1,8 @@
 import React, { Component, useState } from 'react';
-import { Button, Text, TextInput, View, StyleSheet, SafeAreaView, KeyboardAvoidingView, Platform, TouchableOpacity } from 'react-native'
+import { Button, Text, TextInput, View, StyleSheet, SafeAreaView, KeyboardAvoidingView, Platform, TouchableOpacity, Image } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
+
 
 const Login = () => {
 
@@ -17,7 +17,7 @@ const Login = () => {
         <KeyboardAvoidingView style={styles.avoidingView}
             behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
         <View style={styles.icon} >
-            <MaterialCommunityIcons name="book-open-page-variant-outline" size={60} color="black" />
+            <Image source={require("../assets/LibriScan.png")} style={styles.logo} />
         </View>
         <TextInput style={styles.input} 
         placeholder='Enter your email' 
@@ -99,6 +99,11 @@ const styles = StyleSheet.create({
     },
     icon:{
         alignItems: "center",
-        marginBottom: 90,
+        marginBottom: 10,
+    },
+    logo:{
+        width:250,
+        height:250,
+        resizeMode:"contain",
     },
 })
