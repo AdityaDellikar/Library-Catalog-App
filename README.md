@@ -6,17 +6,21 @@ A beautifully designed React Native app to browse, track, and rate your local bo
 📸 Screenshots: 
 
 Register Page: 
+
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 14 04 AM" src="https://github.com/user-attachments/assets/8e5753e8-5b29-439c-ae82-4e898542458c" />
 
 
 Login page: 
+
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 14 10 AM" src="https://github.com/user-attachments/assets/f745d815-5e13-481a-9a98-e2c3707aee6b" />
 
 
 Home Page: 
+
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 15 40 AM" src="https://github.com/user-attachments/assets/be06689e-c792-4098-bf56-9a8a691a5d03" />
 
 Material Top navigation ( filter ) : 
+
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 15 40 AM" src="https://github.com/user-attachments/assets/4fb4c6ac-9ee3-477a-b2cf-5bb4a4fb1ff4" />
 
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 15 51 AM" src="https://github.com/user-attachments/assets/73cd7642-68a1-4f41-b4d5-cfac3fd078f5" />
@@ -26,9 +30,11 @@ Material Top navigation ( filter ) :
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 16 20 AM" src="https://github.com/user-attachments/assets/60b8d7b8-e5d6-485b-8ee1-ed9eb090f73a" />
 
 Search bar: 
+
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 16 45 AM" src="https://github.com/user-attachments/assets/6b4ced2a-58a7-4881-96fe-7959e726d55e" />
 
 Book Details: 
+
 <img width="312" height="663" alt="Screenshot 2025-07-16 at 9 31 37 AM" src="https://github.com/user-attachments/assets/fc5e3cf6-2245-46f8-a58f-2f064cc70f00" />
 
 
@@ -83,7 +89,6 @@ Building reusable components with props
 Validating login/register workflows and managing user sessions
 
 Creating beautiful UI using LinearGradient and Styled Components
-https://github.com/AdityaDellikar/Library-Catalog-App
 
 🚧 Installation & Running Locally
 
